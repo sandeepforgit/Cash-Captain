@@ -11,13 +11,15 @@ import Transactions from './pages/Transactions.jsx'
 import Statistics from './pages/Statistics.jsx'
 import Layout from './Components/Layout.jsx'
 import UserInfo from './pages/UserInfo.jsx'
+import Home from './pages/Home.jsx'
 
 
 const route = createBrowserRouter(
   
   createRoutesFromElements(
     <>
-    <Route path="/" element={<Login />}/>
+    <Route path='/' element={<Home/> } />
+    <Route path="/login" element={<Login />}/>
     <Route path="/Signup" element={<Signup />} />
     <Route element={<Layout />}>
       <Route path="/dashboard" element={<Dashboard />} />
