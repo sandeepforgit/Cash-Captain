@@ -11,8 +11,6 @@ const Dashboard = () => {
   const user = useSelector((state) => state.user.user);
   const dispatch = useDispatch();
 
-
-
   useEffect(() => {
     dispatch(initializeUser());
   }, [dispatch]);

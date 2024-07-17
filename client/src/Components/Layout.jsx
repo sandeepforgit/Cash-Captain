@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import HandleLogout from '../features/HandleLogout';
 
 const Layout = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,7 +40,7 @@ const Layout = () => {
           </ul>
         </nav>
         <div className="p-4 border-t border-gray-200">
-          <button className="w-full text-white bg-blue-600 hover:bg-blue-700 rounded-md py-2 transition duration-200">Logout</button>
+          <button onClick={HandleLogout()} className="w-full text-white bg-blue-600 hover:bg-blue-700 rounded-md py-2 transition duration-200">Logout</button>
         </div>
       </aside>
       

@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import { useSelector, useDispatch } from 'react-redux';
-import { logoutUser } from '../features/userSlice';
+import HandleLogout from '../features/HandleLogout';
 import { initializeUser } from '../features/userSlice';
 import { useNavigate } from 'react-router-dom';
 function UserInfo() {
@@ -12,11 +12,6 @@ function UserInfo() {
         dispatch(initializeUser());
     }, [dispatch]);
     
-    const handleLogout = () => {
-        localStorage.removeItem('token');
-        dispatch(logoutUser());
-        navigate('/');
-      };
 
   return (
     <div className="bg-white overflow-hidden shadow w-96 rounded-lg mt-8 ml-52 hover:scale-110 transition ease-in-out">
@@ -39,7 +34,7 @@ function UserInfo() {
               </div>
             </dl>
             <div className="px-4 py-4">
-              <button onClick={handleLogout} className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition">Logout</button>
+              <button onClick={HandleLogout()} className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition">Logout</button>
             </div>
           </div>
         </div>

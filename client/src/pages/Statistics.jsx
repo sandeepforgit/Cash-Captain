@@ -4,8 +4,8 @@ function Statistics() {
   return (
     <>
       <div><h1 class="font-semibold text-xl ml-20">Statistics</h1></div>
-        <PieChart/>
-      </>
+      <PieChart/>
+    </>
   )
 }
 
