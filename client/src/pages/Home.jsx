@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { initializeUser } from "../features/userSlice";
-import { logoutUser } from "../features/userSlice";
 import HandleLogout from "../features/HandleLogout";
+
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -71,12 +71,12 @@ const Home = () => {
           >
             Get Started
           </Link>
-          <Link
+          { !user.isAuthenticated &&  <Link
             to="/signup"
             className="text-blue-600 px-6 py-3 rounded-md bg-white border border-blue-600 hover:bg-gray-100 transition duration-300 text-lg"
           >
             Create Account
-          </Link>
+          </Link>}
         </div>
       </div>
 

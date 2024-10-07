@@ -30,7 +30,8 @@ export const userSlicer = createSlice({
             }
         },
         logoutUser: (state) => {
-            state.user = initialState.user
+          state.user = initialState.user
+          localStorage.removeItem("token")
         }
     }
 })
